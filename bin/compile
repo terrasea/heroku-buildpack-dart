@@ -6,7 +6,7 @@ set -e
 #set -x
 unset GIT_DIR
 
-CURRENT_DIR=`pwd`
+CURRENT_DIR=`dirname $0`
 
 mkdir -p "$1" "$2"
 BUILD_DIR=$(cd "$1/" && pwd)
