@@ -46,6 +46,8 @@ mkdir -p $PACKAGES_DIR
 message "-----> Installing Dart VM via URL $DART_SDK_URL"
 
 cd $CACHE_DIR
+pwd
+echo $PATH
 curl -L $DART_SDK_URL -o - | ./unzip.py -
 
 
