@@ -36,7 +36,7 @@ if [ -z "$ARCHIVE" ]; then
 fi
 
 if [ -z "$DART_SDK_URL" ]; then
-    DART_SDK_URL="$ARCHIVE/$BUILD/dartsdk-linux-64.tar.gz"
+    DART_SDK_URL="http://storage.googleapis.com/dart-archive/channels/stable/release/latest/sdk/dartsdk-linux-x64-release.zip"
 fi
 
 cd $BUILD_DIR
