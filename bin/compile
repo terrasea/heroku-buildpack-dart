@@ -6,6 +6,8 @@ set -e
 #set -x
 unset GIT_DIR
 
+CURRENT_DIR=`pwd`
+
 mkdir -p "$1" "$2"
 BUILD_DIR=$(cd "$1/" && pwd)
 CACHE_DIR=$(cd "$2/" && pwd)
@@ -49,7 +51,7 @@ cd $CACHE_DIR
 pwd
 echo $PATH
 ls
-curl -L $DART_SDK_URL -o - | ./unzip.py -
+curl -L $DART_SDK_URL -o - | $CURRENT_DIR/unzip.py -
 
 
 message "-----> Copy Dart binaries to app root"
