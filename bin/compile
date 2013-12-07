@@ -28,15 +28,15 @@ message "-----> Welcome, this machine is: $MACHINE"
 
 # if no build number is set, download latest
 if [ -z "$BUILD" ]; then
-    BUILD="15699"
+    BUILD="latest"
 fi
 
 if [ -z "$ARCHIVE" ]; then
-    ARCHIVE="http://commondatastorage.googleapis.com/dart-editor-archive-integration"
+    ARCHIVE="http://storage.googleapis.com/dart-archive/channels/stable/release"
 fi
 
 if [ -z "$DART_SDK_URL" ]; then
-    DART_SDK_URL="$ARCHIVE/$BUILD/dartsdk-linux-64.tar.gz"
+    DART_SDK_URL="$ARCHIVE/$BUILD/sdk/dartsdk-linux-x64-release.zip"
 fi
 
 cd $BUILD_DIR
@@ -46,7 +46,7 @@ mkdir -p $PACKAGES_DIR
 message "-----> Installing Dart VM via URL $DART_SDK_URL"
 
 cd $CACHE_DIR
-curl -L $DART_SDK_URL -o - | tar xzf -
+curl -L $DART_SDK_URL -o - | bin/unzip.py -
 
 
 message "-----> Copy Dart binaries to app root"
