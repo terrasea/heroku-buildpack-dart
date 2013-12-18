@@ -38,7 +38,8 @@ if [ -z "$ARCHIVE" ]; then
 fi
 
 if [ -z "$DART_SDK_URL" ]; then
-    DART_SDK_URL="$ARCHIVE/$BUILD/sdk/dartsdk-linux-x64-release.zip"
+	DART_SDK_URL=https://github.com/selkhateeb/heroku-vagrant-dart-build/releases/download/latest/dart-sdk.tar
+    #DART_SDK_URL="$ARCHIVE/$BUILD/sdk/dartsdk-linux-x64-release.zip"
 fi
 
 cd $BUILD_DIR
@@ -48,11 +49,9 @@ mkdir -p $PACKAGES_DIR
 message "-----> Installing Dart VM via URL $DART_SDK_URL"
 
 cd $CACHE_DIR
-pwd
-echo $PATH
-ls
-curl -L $DART_SDK_URL -o - | $CURRENT_DIR/unzip.py -
 
+#curl -L $DART_SDK_URL -o - | $CURRENT_DIR/unzip.py -
+curl -L $DART_SDK_URL -o - | tar xf -
 
 message "-----> Copy Dart binaries to app root"
 
