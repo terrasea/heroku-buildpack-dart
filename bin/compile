@@ -82,5 +82,5 @@ cd $BUILD_DIR
 #	message "-----> Run Dart build script (build.dart --deploy)"
 #	/app/dart-sdk/bin/dart --package-root=packages/ build.dart --deploy
 #fi
-pub build
+/app/dart-sdk/bin/pub build
 
